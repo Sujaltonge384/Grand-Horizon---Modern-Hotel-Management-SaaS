@@ -1,32 +1,82 @@
 # 🏨 Grand Horizon - Modern Hotel Management SaaS
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Project-2ea44f?style=for-the-badge&logo=github)](https://your-username.github.io/grand-horizon-hotel/)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-A professional, fully functional front-end Hotel Management Dashboard built entirely with Vanilla JavaScript, HTML, and CSS. This project simulates a real-world SaaS application for hotel administrators, featuring an interactive UI, local data persistence, PDF invoice generation, and revenue tracking.
+**Grand Horizon** is a professional, fully functional front-end Hotel Management Dashboard. Built entirely with Vanilla JavaScript, HTML, and CSS, this application simulates a real-world SaaS platform for hotel administrators. It features an interactive UI, local data persistence, PDF invoice generation, and real-time revenue tracking without requiring a backend server.
 
-## ✨ Key Features
+---
 
-* **📊 Interactive Analytics:** Real-time revenue tracking charts powered by `Chart.js`.
-* **🌙 Dark/Light Mode:** Seamless UI theme toggling for user preference.
-* **🛏️ Housekeeping Module:** Track room cleanliness visually. Rooms automatically mark as "Dirty" after a guest checks out.
-* **📄 Pro Invoicing:** Generate dynamic bills including room service extras, discounts, GST, and service charges. Download final invoices as PDFs via `html2pdf.js`.
-* **💾 Local Database & Backups:** All data is saved permanently in the browser using `localStorage`. Includes a "Settings" page to easily Export (download) and Import your JSON data.
-* **📅 Complete Booking Lifecycle:** Manage "Pre-bookings", active "Occupied" guests, and automatically archive past guests into the "History" tab.
-* **🔔 Toast Notifications:** Smooth, non-intrusive pop-up notifications for user actions (saving, deleting, downloading).
+## 🚀 Live Demo
 
-## 🛠️ Tech Stack
+**[👉 Click here to view the Live Demo]()**
 
-* **Front-end:** HTML5, CSS3, Vanilla JavaScript (ES6+)
-* **Icons:** [FontAwesome 6](https://fontawesome.com/)
-* **Charts:** [Chart.js](https://www.chartjs.org/) (Loaded via CDN)
-* **PDF Generation:** [html2pdf.js](https://ekoopmans.github.io/html2pdf.js/) (Loaded via CDN)
+*(Note: The live demo is hosted using GitHub Pages. Since it uses `localStorage`, your data will be saved to your personal browser and won't be seen by other users.)*
 
-## 🚀 How to Run Locally
+---
 
-Because this project is built with pure front-end technologies and utilizes the browser's `localStorage` as a database, there is no need to set up a server, Node.js, or a backend framework!
+## 📸 Application Screenshots
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/grand-horizon-hotel.git](https://github.com/your-username/grand-horizon-hotel.git)
+*(Replace the image links below with your actual screenshots once you upload them to your GitHub repository!)*
+
+### 1. Dashboard & Analytics (Light Mode)
+![Dashboard Light Mode](<img width="1353" height="606" alt="image" src="https://github.com/user-attachments/assets/f2278ad3-cefc-49d6-9207-08f18c5658b6" />)
+*The main view displaying active guests, room availability, and a real-time revenue chart.*
+
+### 2. Dark Mode UI
+![Dark Mode](<img width="1366" height="605" alt="image" src="https://github.com/user-attachments/assets/6b840b66-91f8-46bb-a772-99b55ac8d3ed" />)
+*A sleek, eye-friendly dark mode that toggles instantly across the entire application.*
+
+### 3. Professional PDF Invoicing
+![PDF Invoicing](<img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/cfc360c0-6b59-4461-af7b-45201de2bcc6" />)
+*The billing module automatically calculates days stayed, room service extras, discounts, and GST before exporting a professional PDF.*
+
+---
+
+## ✨ Detailed Feature Breakdown
+
+### 📊 Real-Time Analytics & Dashboard
+* **Revenue Tracking:** Automatically calculates expected revenue based on currently occupied rooms and plots it using `Chart.js`.
+* **Master List:** A searchable, filterable table of all current and upcoming bookings.
+* **Global Search:** Instantly find guests or rooms using the top search bar.
+
+### 🛏️ Core Hotel Operations
+* **Complete Booking Lifecycle:** Move guests from "Pre-booked" to "Occupied", and eventually archive them into "Past Bookings".
+* **Housekeeping Module:** When a guest checks out, their room is flagged as **"Dirty"** (red). Housekeeping staff can mark it **"Clean"** (green) once serviced.
+* **Guest Directory:** Automatically compiles a unique list of all guests who have stayed at the hotel.
+
+### 📄 Pro Billing & Invoicing
+* **Dynamic Calculations:** Automatically calculates the number of nights stayed multiplied by the room type's base rate.
+* **Room Service & Extras:** Add custom line items (e.g., Laundry, Breakfast) to the guest's tab mid-stay.
+* **Discounts & Taxes:** Apply percentage-based discounts. Automatically calculates 18% GST and a 5% Service Charge.
+* **PDF Export:** Utilizes `html2pdf.js` to render the invoice and download it directly to the user's local machine.
+
+### 💾 Data Management (No Backend Required)
+* **Local Storage Engine:** Uses the browser's native `localStorage` API to save data permanently.
+* **Export/Import:** Download the entire hotel database as a `.json` backup file, and upload it later to restore your data.
+* **Factory Reset:** A "Danger Zone" button in settings to completely wipe the system for a fresh start.
+
+---
+
+## 🛠️ Technologies Used
+
+* **HTML5:** Semantic structure and layout.
+* **CSS3:** Custom styling, CSS Variables (for Dark Mode), Flexbox, and CSS Grid.
+* **Vanilla JavaScript (ES6+):** Core logic, DOM manipulation, and data handling without framework bloat.
+* **[Chart.js](https://www.chartjs.org/):** Used for rendering the responsive revenue bar chart.
+* **[html2pdf.js](https://ekoopmans.github.io/html2pdf.js/):** Used for converting the HTML invoice panel into a downloadable PDF.
+* **[FontAwesome 6](https://fontawesome.com/):** For crisp, scalable vector icons across the UI.
+
+---
+
+## 📁 Project Structure
+
+```text
+grand-horizon-hotel/
+│
+├── index.html       # The main layout, sidebar, and structural views
+├── styles.css       # All styling, animations, and dark mode variables
+├── script.js        # The database logic, UI routing, and application core
+└── README.md        # Project documentation
