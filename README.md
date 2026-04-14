@@ -21,17 +21,27 @@
 
 *(Replace the image links below with your actual screenshots once you upload them to your GitHub repository!)*
 
-### 1. Dashboard & Analytics (Light Mode)
-![Dashboard Light Mode](<img width="1353" height="606" alt="image" src="https://github.com/user-attachments/assets/f2278ad3-cefc-49d6-9207-08f18c5658b6" />)
-*The main view displaying active guests, room availability, and a real-time revenue chart.*
+### 1. Command Center (Dashboard)
+<img width="1352" height="601" alt="image" src="https://github.com/user-attachments/assets/303ef9d5-01e2-4142-a4c5-7c844f6d86e4" />
+The heart of the system. Displays real-time occupancy stats, the searchable Master Booking List, and the Revenue Analytics bar chart.
 
-### 2. Dark Mode UI
-![Dark Mode](<img width="1366" height="605" alt="image" src="https://github.com/user-attachments/assets/6b840b66-91f8-46bb-a772-99b55ac8d3ed" />)
-*A sleek, eye-friendly dark mode that toggles instantly across the entire application.*
+### 2. Night Operations (Dark Mode)
+A high-contrast, eye-friendly interface designed for front-desk staff working overnight shifts. Toggled with a single click.
 
-### 3. Professional PDF Invoicing
-![PDF Invoicing](<img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/cfc360c0-6b59-4461-af7b-45201de2bcc6" />)
-*The billing module automatically calculates days stayed, room service extras, discounts, and GST before exporting a professional PDF.*
+### 3. Housekeeping & Room Status
+Real-time room tracking. Rooms automatically turn red (Dirty) upon guest checkout and must be manually cleared (Green) for the next guest.
+
+### 4. Advanced Billing & Extra Charges
+The invoice engine. Manage mid-stay room service charges, apply discount codes, and view automated GST/Service Charge calculations.
+
+### 5. Guest History & Archives
+Clean separation between current guests and historical records. The system automatically migrates data based on the checkout date.
+
+### 6. Database & Backup Controls
+Enterprise-level data control. Export your entire hotel database as a JSON file or restore from a previous backup to prevent data loss.
+
+### 7. Mobile-Ready Design
+A fully responsive layout that allows hotel managers to track occupancy and revenue directly from their smartphone.
 
 ---
 
