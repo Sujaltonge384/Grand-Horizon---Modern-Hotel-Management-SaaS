@@ -47,6 +47,7 @@ Enterprise-level data control. Export your entire hotel database as a JSON file 
 
 ### 7. Mobile-Ready Design
 <img width="410" height="522" alt="image" src="https://github.com/user-attachments/assets/f4daa89d-00ce-4f2b-a9bc-1740a1d6672a" />
+
 A fully responsive layout that allows hotel managers to track occupancy and revenue directly from their smartphone.
 
 ---
