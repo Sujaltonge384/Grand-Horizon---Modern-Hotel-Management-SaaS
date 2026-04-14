@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Horizon | Hotel Management Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-hotel"></i>
+                <h2>Grand Horizon</h2>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" data-target="dashboard-view" class="nav-item active"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+                    <li><a href="#" data-target="rooms-view" class="nav-item"><i class="fa-solid fa-broom"></i> Housekeeping</a></li>
+                    <li><a href="#" data-target="prebookings-view" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Pre-Bookings</a></li>
+                    <li><a href="#" data-target="guests-view" class="nav-item"><i class="fa-solid fa-users"></i> Guests</a></li>
+                    <li><a href="#" data-target="billing-view" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i> Billing</a></li>
+                    <li><a href="#" data-target="past-bookings-view" class="nav-item"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+                    <li><a href="#" data-target="settings-view" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="search-bar">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="global-search" placeholder="Search guests or room no...">
+                </div>
+                <div class="header-actions">
+                    <i id="theme-toggle" class="fa-solid fa-moon icon-btn" title="Toggle Dark Mode"></i>
+                    <button id="open-modal-btn" class="btn-primary"><i class="fa-solid fa-plus"></i> New Booking</button>
+                </div>
+            </header>
+
+            <div id="dashboard-view" class="view-section">
+                <div class="chart-container" style="background: var(--white); padding: 20px; border-radius: 12px; margin-bottom: 20px; height: 300px;">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+
+                <div class="table-container">
+                    <h3>Active & Upcoming Bookings</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Guest Name</th>
+                                <th>Room No.</th>
+                                <th>Type</th>
+                                <th>Check-in</th>
+                                <th>Check-out</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboard-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="rooms-view" class="view-section hidden">
+                <div class="table-container">
+                    <h3>Housekeeping Status</h3>
+                    <p class="text-muted" style="margin-bottom: 15px;">Manage room cleaning status after checkouts.</p>
+                    <div id="rooms-grid" class="rooms-grid"></div>
+                </div>
+            </div>
+
+            <div id="prebookings-view" class="view-section hidden">
+                <div class="table-container">
+                    <h3>Upcoming Pre-Bookings</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Guest Name</th>
+                                <th>Room No.</th>
+                                <th>Check-in Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="prebookings-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="guests-view" class="view-section hidden">
+                <div class="table-container">
+                    <h3>Guest Directory</h3>
+                    <ul id="guests-list" class="guest-list-ui"></ul>
+                </div>
+            </div>
+
+            <div id="billing-view" class="view-section hidden">
+                <div class="table-container" style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <h3>Select Guest</h3>
+                        <div id="billing-list"></div>
+                    </div>
+                    <div style="flex: 1; background: var(--bg-color); padding: 20px; border-radius: 8px;">
+                        <div id="invoice-panel">
+                            <h3>Invoice</h3>
+                            <p class="text-muted">Select a guest from the list to generate a bill.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="past-bookings-view" class="view-section hidden">
+                <div class="table-container">
+                    <h3>Booking History</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Guest</th>
+                                <th>Room</th>
+                                <th>Check-in</th>
+                                <th>Check-out</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="past-bookings-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="settings-view" class="view-section hidden">
+                <div class="table-container">
+                    <h3>System Settings</h3>
+                    <br>
+                    <h4>Data Backup</h4>
+                    <p class="text-muted">Save your hotel data to your computer or load an existing backup.</p>
+                    <div style="margin-top: 10px; display: flex; gap: 10px;">
+                        <button id="export-btn" class="btn-primary"><i class="fa-solid fa-download"></i> Export Data</button>
+                        <input type="file" id="import-file" style="display: none;" accept=".json">
+                        <button id="import-btn" class="btn-secondary"><i class="fa-solid fa-upload"></i> Import Data</button>
+                    </div>
+                    <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border);">
+                    <h4>Danger Zone</h4>
+                    <button id="clear-data-btn" class="btn-danger"><i class="fa-solid fa-trash"></i> Factory Reset Database</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="booking-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Booking</h2>
+                <span id="close-modal-btn" class="close-btn">&times;</span>
+            </div>
+            <form id="new-booking-form">
+                <div class="form-group"><label>Guest Name</label><input type="text" id="guest-name" required></div>
+                <div class="form-group"><label>Room Number</label><input type="number" id="room-number" required></div>
+                <div class="form-group">
+                    <label>Room Type</label>
+                    <select id="room-type" required>
+                        <option value="Prime">Prime (₹2,000/night)</option>
+                        <option value="Deluxe">Deluxe (₹3,500/night)</option>
+                        <option value="Super Deluxe">Super Deluxe (₹5,000/night)</option>
+                        <option value="Royal Suite">Royal Suite (₹8,500/night)</option>
+                    </select>
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <div class="form-group" style="flex:1;"><label>Check-in</label><input type="date" id="check-in" required></div>
+                    <div class="form-group" style="flex:1;"><label>Check-out</label><input type="date" id="check-out" required></div>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="booking-status" required>
+                        <option value="Occupied">Occupied</option>
+                        <option value="Pre-booked">Pre-booked</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Save Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
