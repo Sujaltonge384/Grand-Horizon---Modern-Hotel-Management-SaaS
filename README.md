@@ -26,21 +26,27 @@
 The heart of the system. Displays real-time occupancy stats, the searchable Master Booking List, and the Revenue Analytics bar chart.
 
 ### 2. Night Operations (Dark Mode)
+<img width="1351" height="600" alt="image" src="https://github.com/user-attachments/assets/286bde46-4405-49a3-b679-944ac4238758" />
 A high-contrast, eye-friendly interface designed for front-desk staff working overnight shifts. Toggled with a single click.
 
 ### 3. Housekeeping & Room Status
+<img width="1366" height="611" alt="image" src="https://github.com/user-attachments/assets/50503027-5db4-4f05-82bf-5c1a1883e69b" />
 Real-time room tracking. Rooms automatically turn red (Dirty) upon guest checkout and must be manually cleared (Green) for the next guest.
 
 ### 4. Advanced Billing & Extra Charges
+<img width="1089" height="604" alt="image" src="https://github.com/user-attachments/assets/5fd4e5cc-66b1-4713-a007-07824ff5052b" />
 The invoice engine. Manage mid-stay room service charges, apply discount codes, and view automated GST/Service Charge calculations.
 
 ### 5. Guest History & Archives
+<img width="1362" height="601" alt="image" src="https://github.com/user-attachments/assets/9fd0ab01-6c37-4222-84bc-8bc21fa0c954" />
 Clean separation between current guests and historical records. The system automatically migrates data based on the checkout date.
 
 ### 6. Database & Backup Controls
+<img width="1366" height="611" alt="image" src="https://github.com/user-attachments/assets/028a2822-9ec3-4b7f-a799-438a0ce7c442" />
 Enterprise-level data control. Export your entire hotel database as a JSON file or restore from a previous backup to prevent data loss.
 
 ### 7. Mobile-Ready Design
+<img width="410" height="522" alt="image" src="https://github.com/user-attachments/assets/f4daa89d-00ce-4f2b-a9bc-1740a1d6672a" />
 A fully responsive layout that allows hotel managers to track occupancy and revenue directly from their smartphone.
 
 ---
